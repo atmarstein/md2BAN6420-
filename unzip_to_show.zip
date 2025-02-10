@@ -1,0 +1,23 @@
+
+library(utils)
+
+setwd("C:\\Users\\Maruf Ajimati\\Documents\\Nexford Assignments\\B\\Maruf Ajimati Module 2 Assignment Salary Function")
+
+
+
+zip_file <- "Employee Profile.zip" 
+output_folder <- "Employee Profile"
+
+
+unzip(zip_file, exdir = output_folder)
+
+
+files <- list.files(output_folder, full.names = TRUE)
+
+
+if (length(files) > 0) {
+  employee_data <- read.csv(files[1])
+  print(head(employee_data))  # Display the first few rows
+} else {
+  print("No files found in the extracted folder.")
+}
